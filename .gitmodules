@@ -1,0 +1,9 @@
+[submodule "admin"]
+	path = admin
+	url = https://github.com/AmitKrVr/agrivet-admin.git
+[submodule "backend"]
+	path = backend
+	url = https://github.com/AmitKrVr/agrivet-backend.git
+[submodule "mobile"]
+	path = mobile
+	url = https://github.com/AmitKrVr/agrivet-mobile.git
