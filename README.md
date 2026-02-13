@@ -53,7 +53,6 @@ Admins can:
 
 Important:
 
--   Admins do **not approve products**
 -   Admins do **not approve users**
 
 ---
@@ -109,6 +108,7 @@ AGRIVET solves this by:
 
 -   Location-based listings
 -   Direct contact details
+-   In App Chat with buyer to seller or seller to buyer
 -   No middlemen
 
 The platform does **NOT**:
@@ -152,13 +152,14 @@ When product features are added, these rules apply:
     -   Optional short video (max ~20 sec)
     -   Price
     -   Description
-    -   Location
+    -   Location (auto) when uploading we take
+    -   Address
     -   Contact details
 
 -   Once uploaded:
 
     -   ❌ User cannot edit the product
-    -   ❌ Admin approval is NOT required
+    -   Admin approval is required
 
 -   Admin can:
 
@@ -175,10 +176,12 @@ Flow:
 
 1. Upload product details
 2. Accept platform terms
-3. Pay platform fee (future)
-4. Product goes live
-5. Product is visible for **X days**
-6. After expiry → product disappears
+3. Submit product details
+4. Wait for admin approval
+5. Pay platform fee (future)
+6. Product goes live
+7. Product is visible for **X days**
+8. After expiry → product disappears (inactive) for activation again need to pay again
 
 Rules:
 
@@ -212,9 +215,9 @@ Important rule:
 
 Unverified users:
 
--   Exist in DB
--   Cannot access features
--   Do not count as active users
+-   Not Exist in DB
+-   It is in Redis cache for 5 min
+-   After otp varified users in DB
 
 ---
 
@@ -278,7 +281,6 @@ AGRIVET intentionally does **NOT** include:
 
 -   Product delivery
 -   Payment escrow
--   In-app chat
 -   Ratings & reviews
 -   Order tracking
 -   Dispute resolution
